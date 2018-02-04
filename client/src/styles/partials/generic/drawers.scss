@@ -1,0 +1,53 @@
+.bd-drawer {
+    .bd-form-header {
+        cursor: pointer;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.25);
+        }
+    }
+
+    .bd-drawer-open-button {
+        position: relative;
+        margin-right: 15px;
+
+        .bd-chevron-1, .bd-chevron-2 {
+            position: absolute;
+        }
+
+        svg {
+            transition: transform 0.5s ease;
+            transform: none;
+        }
+    }
+
+    .bd-drawer-contents {
+        display: none;
+    }
+
+    &:not(.bd-drawer-open) {
+        padding-bottom: 5px;
+        border-bottom: 1px solid rgba(114, 118, 126, 0.3);
+    }
+
+    &.bd-drawer-open {
+        .bd-drawer-open-button {
+            .bd-chevron-1 {
+                svg {
+                    transform: rotate(90deg)
+                }
+            }
+
+            .bd-chevron-2 {
+                margin-left: -4px;
+                svg {
+                    transform: rotate(270deg)
+                }
+            }
+        }
+
+        .bd-drawer-contents {
+            display: block;
+        }
+    }
+}
